@@ -51,3 +51,25 @@ This is command for flag file. The flag file contains the parameters for the run
 
 
 
+
+
+# Questions After
+
+- what is Relax:
+~~~
+Relax is the main protocol for relaxing a structure in Rosetta; it samples conformations of a given structure close to it in 3D space to find the lowest-scoring variant, running both the packer and minimizer alternately. This is usually done to enable an apples-to-apples comparison between disparate structures, including crystal structures and the output of Rosetta' sampling protocols, by first minimizing them in local space according to the same score function. It is therefore advisable to run relax on any structure you intend to compare to each other.
+~~~
+- constraints Tutorial
+~~~
+Some biological or functioanl considerations may not be relfected within a PDB file or evaluated by normal score functions. Constraints are a general way of scoring how well a structure adheres to these additional considerations; for example, one might wish to relax a structure with constraints in place to ensure that suspected disulfides are maintained. It work in the following ways:
+1. Some measure is calculated in a given conformation
+2. There is a suitable function that describes which values are good and which ones are bad, e.g. the ideal bond length could be the minimum of a parabolic function(harmonic potential). By evaluating the function for the measuresd value, a penalty is calculated. For the harmonic potential, the penalty increases the further away the measured bond length is from the ideal length.
+3. This penalty is multiplied by a weighting factor and added to the energy.
+~~~
+
+
+
+
+
+
+
